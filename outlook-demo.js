@@ -3,11 +3,11 @@ Notification.requestPermission();
 $(function () {
     // App configuration
     const authEndpoint = 'https://login.microsoftonline.com/common/oauth2/v2.0/authorize?';
-    const redirectUri = 'http://localhost:8080';
+    const redirectUri = 'https://david-codes.hatanian.com/zoom-meeting-notifier';
     const appId = '56a8a6dc-76ab-45de-b45d-91388f4bfbc2';
     const scopes = 'openid profile User.Read Calendars.Read';
-    const SEARCH_LOOKAHEAD_HOURS = 96;
-    const NOTIFICATION_LOOKAHEAD_MINUTES = 48 * 60;
+    const SEARCH_LOOKAHEAD_HOURS = 20;
+    const NOTIFICATION_LOOKAHEAD_MINUTES = 16;
     let ALL_USER_EVENTS = [];
 
     // Check for browser support for localStorage
