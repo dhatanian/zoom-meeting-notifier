@@ -3,7 +3,7 @@ Notification.requestPermission();
 $(function () {
     // App configuration
     const authEndpoint = 'https://login.microsoftonline.com/common/oauth2/v2.0/authorize?';
-    const redirectUri = 'https://david-codes.hatanian.com/zoom-meeting-notifier';
+    const ROOT = 'https://david-codes.hatanian.com/zoom-meeting-notifier';
     const appId = '56a8a6dc-76ab-45de-b45d-91388f4bfbc2';
     const scopes = 'openid profile User.Read Calendars.Read';
     const SEARCH_LOOKAHEAD_HOURS = 20;
@@ -71,7 +71,7 @@ $(function () {
                         body: 'Click to open Zoom',
                         requireInteraction: true,
                         tag: event.id,
-                        icon: 'http://localhost:8080/zoom.jpeg'
+                        icon: `${ROOT}/zoom.jpeg`
                     };
 
                     let notification = new Notification(event.subject, options);
@@ -216,7 +216,7 @@ $(function () {
         var authParams = {
             response_type: 'id_token token',
             client_id: appId,
-            redirect_uri: redirectUri,
+            redirect_uri: ROOT,
             scope: scopes,
             state: localStorage.authState,
             nonce: localStorage.authNonce,
